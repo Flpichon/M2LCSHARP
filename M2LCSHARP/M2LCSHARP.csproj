@@ -51,6 +51,10 @@
     <Compile Include="Accueil.Designer.cs">
       <DependentUpon>Accueil.cs</DependentUpon>
     </Compile>
+    <Compile Include="DATA\adherent.cs" />
+    <Compile Include="DATA\club.cs" />
+    <Compile Include="DATA\evenement.cs" />
+    <Compile Include="DATA\type_club.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
