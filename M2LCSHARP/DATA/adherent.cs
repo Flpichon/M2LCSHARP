@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace M2LCSHARP.DATA
 {
-    public class adherent
+    class adherent
     {
-        private int Id { get; set; }
-        private int numero_licence { get; set; }
-        private string Nom { get; set; }
-        private string Prenom { get; set; }
-        private string CodePostal { get; set; }
-        private string Adresse { get; set; }
-        private string Ville { get; set; }
-        private DateTime DateNaissance { get; set; }
-        private int Cotisation { get; set; }
+        public int Id { get; set; }
+        public int numero_licence { get; set; }
+        public string Nom { get; set; }
+        public string Prenom { get; set; }
+        public string CodePostal { get; set; }
+        public string Adresse { get; set; }
+        public string Ville { get; set; }
+        public DateTime DateNaissance { get; set; }
+        public int Cotisation { get; set; }
+        public club club { get; set; }
     }
 }

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace M2LCSHARP.DATA
 {
-    public class evenement
+     class evenement
     {
-        private int id_evenement { get; set; }
-        private string Titre_evenement { get; set; }
-        private DateTime Debut_evenement { get; set; }
-        private DateTime Fin_evenement { get; set; }
-        private club Club { get; set; }
+        public int id_evenement { get; set; }
+        public string Titre_evenement { get; set; }
+        public DateTime Debut_evenement { get; set; }
+        public DateTime Fin_evenement { get; set; }
+        public club Club { get; set; }
 
     }
 }

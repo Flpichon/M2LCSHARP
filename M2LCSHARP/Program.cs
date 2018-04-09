@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace M2LCSHARP
 {
     static class Program
-    {
+    { 
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
@@ -17,6 +17,8 @@ namespace M2LCSHARP
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Accueil());
+            
         }
+      
     }
 }

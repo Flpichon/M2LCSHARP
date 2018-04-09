@@ -8,7 +8,8 @@ namespace M2LCSHARP.DATA
 {
     class type_club
     {
-        private int id_type { get; set; }
-        private string libelle { get; set; }
+       public int id_type { get; set; }
+       public string libelle { get; set; }
+        
     }
 }
