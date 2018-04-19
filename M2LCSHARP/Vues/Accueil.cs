@@ -1,25 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+﻿using System.Windows.Forms;
+using M2LCSHARP.DATA;
+using M2LCSHARP.DATA_METHODES;
+using M2LCSHARP.BDD;
+using M2LCSHARP.Vues;
+
 namespace M2LCSHARP
 {
     public partial class Accueil : Form
     {
-        DATA.club clubi = new DATA.club();
-        DATA.adherent a = new DATA.adherent();
-        
+
+        gestion_Adherents GAdhe;
         public Accueil()
         {
             InitializeComponent();
-            
            
+            GAdhe = new gestion_Adherents();
+           
+            
+        }
+
+        private void Accueil_Load(object sender, System.EventArgs e)
+        {
+
+        }
+
+        
+
+        private void Adherents_Click(object sender, System.EventArgs e)
+        {
+            Gestion_Adherents GA = new Gestion_Adherents(GAdhe);
+            GA.ShowDialog();    
         }
     }
 }

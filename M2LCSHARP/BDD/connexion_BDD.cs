@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 namespace M2LCSHARP.BDD
 {
-    class connexion_BDD
+    public class connexion_BDD
     {
-        static private string connectionString;
-
+        private string connectionString;
+        public MySqlConnection connection { get; set; }
 
         public connexion_BDD()
         {
-            ConnexionBDD();
+            this.ConnexionBDD();
         }
-        static public void ConnexionBDD()
+        public void ConnexionBDD()
         {
             string server = "localhost";
             string port = "3306";
@@ -24,8 +24,11 @@ namespace M2LCSHARP.BDD
             string password = "";
             connectionString = "SERVER=" + server + ";" + "PORT=" + port + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
-
+            this.connection = new MySqlConnection(connectionString);
+            
         }
+
+      
 
     }
 }

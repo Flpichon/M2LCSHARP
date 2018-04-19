@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace M2LCSHARP.DATA
 {
-    class type_club
+   public class type_club
     {
        public int id_type { get; set; }
        public string libelle { get; set; }
