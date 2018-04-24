@@ -62,7 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDD\BDD_Adhérents.cs" />
+    <Compile Include="BDD\BDD_Clubs.cs" />
     <Compile Include="BDD\connexion_BDD.cs" />
+    <Compile Include="DATA_METHODES\gestion_Clubs.cs" />
     <Compile Include="Vues\Accueil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,11 +85,29 @@
     <Compile Include="Vues\ajout_adh.Designer.cs">
       <DependentUpon>ajout_adh.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vues\ajout_club.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vues\ajout_club.Designer.cs">
+      <DependentUpon>ajout_club.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vues\Gestion_Adherents.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vues\Gestion_Adherents.Designer.cs">
       <DependentUpon>Gestion_Adherents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vues\Gestion_Clubs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vues\Gestion_Clubs.Designer.cs">
+      <DependentUpon>Gestion_Clubs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vues\Modifer_Adh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vues\Modifer_Adh.Designer.cs">
+      <DependentUpon>Modifer_Adh.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -104,8 +124,17 @@
     <EmbeddedResource Include="Vues\ajout_adh.resx">
       <DependentUpon>ajout_adh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vues\ajout_club.resx">
+      <DependentUpon>ajout_club.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vues\Gestion_Adherents.resx">
       <DependentUpon>Gestion_Adherents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vues\Gestion_Clubs.resx">
+      <DependentUpon>Gestion_Clubs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vues\Modifer_Adh.resx">
+      <DependentUpon>Modifer_Adh.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="BDD\.vs\BDD\v15\.suo" />
     <None Include="BDD\.vs\ProjectSettings.json" />

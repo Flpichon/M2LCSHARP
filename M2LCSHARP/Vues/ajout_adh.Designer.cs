@@ -41,11 +41,11 @@
             this.txt_Adr_Adh = new System.Windows.Forms.MaskedTextBox();
             this.lbl_Adr_Adh = new System.Windows.Forms.Label();
             this.lbl_Club_Adh = new System.Windows.Forms.Label();
-            this.cbb_Adh_Club = new System.Windows.Forms.ComboBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.btn_Adh_Valid = new System.Windows.Forms.Button();
             this.ajout = new System.Windows.Forms.GroupBox();
             this.fermeraj = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.ajout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -174,18 +174,6 @@
             this.lbl_Club_Adh.TabIndex = 12;
             this.lbl_Club_Adh.Text = "Club";
             // 
-            // cbb_Adh_Club
-            // 
-            this.cbb_Adh_Club.FormattingEnabled = true;
-            this.cbb_Adh_Club.Items.AddRange(new object[] {
-            "club 1",
-            "club 2",
-            "club 3"});
-            this.cbb_Adh_Club.Location = new System.Drawing.Point(149, 250);
-            this.cbb_Adh_Club.Name = "cbb_Adh_Club";
-            this.cbb_Adh_Club.Size = new System.Drawing.Size(81, 21);
-            this.cbb_Adh_Club.TabIndex = 14;
-            // 
             // monthCalendar1
             // 
             this.monthCalendar1.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -200,17 +188,17 @@
             this.btn_Adh_Valid.Name = "btn_Adh_Valid";
             this.btn_Adh_Valid.Size = new System.Drawing.Size(75, 23);
             this.btn_Adh_Valid.TabIndex = 16;
-            this.btn_Adh_Valid.Text = "Valider";
+            this.btn_Adh_Valid.Text = "Ajouter";
             this.btn_Adh_Valid.UseVisualStyleBackColor = true;
             this.btn_Adh_Valid.Click += new System.EventHandler(this.btn_Adh_Valid_Click);
             // 
             // ajout
             // 
+            this.ajout.Controls.Add(this.label1);
             this.ajout.Controls.Add(this.fermeraj);
             this.ajout.Controls.Add(this.monthCalendar1);
             this.ajout.Controls.Add(this.btn_Adh_Valid);
             this.ajout.Controls.Add(this.lbl_naissance_adh);
-            this.ajout.Controls.Add(this.cbb_Adh_Club);
             this.ajout.Controls.Add(this.txt_Nom_Adh);
             this.ajout.Controls.Add(this.lbl_Club_Adh);
             this.ajout.Controls.Add(this.lbl_Nom_Adh);
@@ -240,6 +228,15 @@
             this.fermeraj.UseVisualStyleBackColor = true;
             this.fermeraj.Click += new System.EventHandler(this.fermeraj_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(146, 254);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(228, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Choix disponible après la création de l\'adhérent";
+            // 
             // ajout_adh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,6 +245,7 @@
             this.Controls.Add(this.ajout);
             this.Name = "ajout_adh";
             this.Text = "ajout_adh";
+            this.Load += new System.EventHandler(this.ajout_adh_Load);
             this.ajout.ResumeLayout(false);
             this.ajout.PerformLayout();
             this.ResumeLayout(false);
@@ -269,10 +267,10 @@
         private System.Windows.Forms.MaskedTextBox txt_Adr_Adh;
         private System.Windows.Forms.Label lbl_Adr_Adh;
         private System.Windows.Forms.Label lbl_Club_Adh;
-        private System.Windows.Forms.ComboBox cbb_Adh_Club;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Button btn_Adh_Valid;
         private System.Windows.Forms.GroupBox ajout;
         private System.Windows.Forms.Button fermeraj;
+        private System.Windows.Forms.Label label1;
     }
 }

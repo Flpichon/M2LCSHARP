@@ -29,6 +29,11 @@ namespace M2LCSHARP.DATA
         public DateTime DateNaissance { get; set; }
         public int Cotisation { get; set; }
         public club club { get; set; }
+
+        public void AdhAjoutClub(club club)
+        {
+            this.club = club;
+        }
     }
 
     

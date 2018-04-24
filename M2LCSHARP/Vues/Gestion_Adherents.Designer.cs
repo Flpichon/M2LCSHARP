@@ -33,20 +33,42 @@
             this.btn_Ajouter_Adh = new System.Windows.Forms.Button();
             this.fermer = new System.Windows.Forms.Button();
             this.refresh = new System.Windows.Forms.Button();
+            this.clubtitre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Code_Postal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ville = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cotisation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Club = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clubtitre,
+            this.Nom,
+            this.Prenom,
+            this.Code_Postal,
+            this.Ville,
+            this.Adresse,
+            this.numero,
+            this.Cotisation,
+            this.Club});
             this.dataGridView1.Location = new System.Drawing.Point(12, 22);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(524, 192);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick_1);
             // 
             // label1
             // 
@@ -85,9 +107,63 @@
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(75, 23);
             this.refresh.TabIndex = 4;
-            this.refresh.Text = "refresh";
+            this.refresh.Text = "button1";
             this.refresh.UseVisualStyleBackColor = true;
-            this.refresh.Click += new System.EventHandler(this.refresh_Click);
+            this.refresh.Click += new System.EventHandler(this.refresh_Click_1);
+            // 
+            // clubtitre
+            // 
+            this.clubtitre.HeaderText = "Id";
+            this.clubtitre.Name = "clubtitre";
+            this.clubtitre.ReadOnly = true;
+            // 
+            // Nom
+            // 
+            this.Nom.HeaderText = "Nom";
+            this.Nom.Name = "Nom";
+            this.Nom.ReadOnly = true;
+            // 
+            // Prenom
+            // 
+            this.Prenom.HeaderText = "prenom";
+            this.Prenom.Name = "Prenom";
+            this.Prenom.ReadOnly = true;
+            // 
+            // Code_Postal
+            // 
+            this.Code_Postal.HeaderText = "Code Postal";
+            this.Code_Postal.Name = "Code_Postal";
+            this.Code_Postal.ReadOnly = true;
+            // 
+            // Ville
+            // 
+            this.Ville.HeaderText = "Ville";
+            this.Ville.Name = "Ville";
+            this.Ville.ReadOnly = true;
+            // 
+            // Adresse
+            // 
+            this.Adresse.HeaderText = "Adresse";
+            this.Adresse.Name = "Adresse";
+            this.Adresse.ReadOnly = true;
+            // 
+            // numero
+            // 
+            this.numero.HeaderText = "N° Licence";
+            this.numero.Name = "numero";
+            this.numero.ReadOnly = true;
+            // 
+            // Cotisation
+            // 
+            this.Cotisation.HeaderText = "Cotisation";
+            this.Cotisation.Name = "Cotisation";
+            this.Cotisation.ReadOnly = true;
+            // 
+            // Club
+            // 
+            this.Club.HeaderText = "Club";
+            this.Club.Name = "Club";
+            this.Club.ReadOnly = true;
             // 
             // Gestion_Adherents
             // 
@@ -115,5 +191,14 @@
         private System.Windows.Forms.Button btn_Ajouter_Adh;
         private System.Windows.Forms.Button fermer;
         private System.Windows.Forms.Button refresh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clubtitre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prenom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Code_Postal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ville;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Adresse;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cotisation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Club;
     }
 }

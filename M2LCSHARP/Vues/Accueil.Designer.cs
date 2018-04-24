@@ -33,7 +33,9 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_Club = new System.Windows.Forms.Button();
             this.Adherents = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,17 +59,30 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btn_Club);
             this.panel2.Controls.Add(this.Adherents);
             this.panel2.Location = new System.Drawing.Point(2, 267);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(545, 48);
             this.panel2.TabIndex = 5;
             // 
+            // btn_Club
+            // 
+            this.btn_Club.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btn_Club.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Club.Location = new System.Drawing.Point(395, 6);
+            this.btn_Club.Name = "btn_Club";
+            this.btn_Club.Size = new System.Drawing.Size(101, 37);
+            this.btn_Club.TabIndex = 1;
+            this.btn_Club.Text = "Clubs";
+            this.btn_Club.UseVisualStyleBackColor = false;
+            this.btn_Club.Click += new System.EventHandler(this.btn_Club_Click);
+            // 
             // Adherents
             // 
             this.Adherents.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.Adherents.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Adherents.Location = new System.Drawing.Point(9, 6);
+            this.Adherents.Location = new System.Drawing.Point(49, 6);
             this.Adherents.Name = "Adherents";
             this.Adherents.Size = new System.Drawing.Size(101, 37);
             this.Adherents.TabIndex = 0;
@@ -94,6 +109,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button Adherents;
+        private System.Windows.Forms.Button btn_Club;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

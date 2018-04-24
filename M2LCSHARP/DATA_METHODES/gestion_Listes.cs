@@ -1,4 +1,5 @@
 ﻿using M2LCSHARP.BDD;
+using M2LCSHARP.DATA;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,13 +10,21 @@ namespace M2LCSHARP.DATA_METHODES
 {
     public class gestion_Listes
     {
-        public static List<DATA.adherent> Créer_Liste()
+        public static List<adherent> Créer_Liste()
         {
-            List<DATA.adherent> Liste = new List<DATA.adherent>();
+            List<adherent> Liste = new List<adherent>();
             BDD_Adhérents BD = new BDD_Adhérents();
             Liste = BD.Readadherent();
             
             return Liste;
         }
+        public static List<club> Créer_Liste_Club()
+        {
+            List<club> Liste = new List<club>();
+            BDD_Clubs BD = new BDD_Clubs();
+            Liste = BD.ReadClub();
+            return Liste;
+        }
+            
     }
 }

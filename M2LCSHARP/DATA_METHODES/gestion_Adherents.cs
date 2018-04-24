@@ -9,7 +9,7 @@ namespace M2LCSHARP.DATA_METHODES
 {
     public class gestion_Adherents
     {
-        public List<DATA.adherent> liste { get; set; }
+        public List<adherent> liste { get; set; }
 
         public gestion_Adherents()
         {
