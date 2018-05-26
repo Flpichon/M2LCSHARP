@@ -27,13 +27,15 @@ namespace M2LCSHARP.Vues
 
         private void Gestion_Adherents_Load(object sender, EventArgs e)
         {
+          
             gAdhe.liste = bADH.Readadherent();
+            dataGridView1.AutoGenerateColumns = true;
+            dataGridView1.AutoResizeColumns();
             foreach (var item in gAdhe.liste)
              {
 
 
-            dataGridView1.AutoGenerateColumns = true;
-            dataGridView1.AutoResizeColumns();
+            
                 try
                 { dataGridView1.Rows.Add(item.Id,item.Nom,item.Prenom,item.CodePostal,item.Ville,item.Adresse,item.numero_licence,item.Cotisation,item.club.Titre_club); }
                 catch
@@ -75,16 +77,22 @@ namespace M2LCSHARP.Vues
 
         private void refresh_Click_1(object sender, EventArgs e)
         {
-            
-            dataGridView1.Update();
+            dataGridView1.Rows.Clear();
             gAdhe.liste = bADH.Readadherent();
+            foreach (var item in gAdhe.liste)
+            {
 
-            dataGridView1.Refresh();
-            
-            
-            
 
-            
+                dataGridView1.AutoGenerateColumns = true;
+                dataGridView1.AutoResizeColumns();
+                try
+                { dataGridView1.Rows.Add(item.Id, item.Nom, item.Prenom, item.CodePostal, item.Ville, item.Adresse, item.numero_licence, item.Cotisation, item.club.Titre_club); }
+                catch
+                { dataGridView1.Rows.Add(item.Id, item.Nom, item.Prenom, item.CodePostal, item.Ville, item.Adresse, "Aucun", "Aucune", "Pas de club"); }
+
+            }
+
+
 
         }
     }

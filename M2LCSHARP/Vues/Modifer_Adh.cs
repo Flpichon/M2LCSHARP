@@ -17,6 +17,7 @@ namespace M2LCSHARP.Vues
     {
         BDD_Adhérents Adh = new BDD_Adhérents();
         adherent modadh;
+        
         gestion_Clubs GestionC;
         public Modifer_Adh(DATA.adherent adherent, gestion_Clubs gClub)
         {
@@ -34,9 +35,19 @@ namespace M2LCSHARP.Vues
             txt_Cp_Adh_Mod.Text = modadh.CodePostal;
             txt_Ville_Adh_Mod.Text = modadh.Ville;
             txt_Adr_Adh_Mod.Text = modadh.Adresse;
+            Adh.ClubAdh();
             foreach (var item in Adh.ClubAdh())
             {
-                cbb_Adh_Club_Mod.Items.Add(item.Titre_club);
+                try
+                {
+                    if (item.Titre_club != modadh.club.Titre_club)
+                        cbb_Adh_Club_Mod.Items.Add(item.Titre_club);
+                }
+                catch
+                { cbb_Adh_Club_Mod.Items.Add(item.Titre_club); }
+                try { cbb_Adh_Club_Mod.Text = modadh.club.Titre_club; }
+                catch
+                { }
             }
 
         }
@@ -52,8 +63,14 @@ namespace M2LCSHARP.Vues
             modadh.Adresse = txt_Adr_Adh_Mod.Text;
             modadh.club = GestionC.RechercherClub(cbb_Adh_Club_Mod.Text);
             modadh.numero_licence = rand.Next(123456, 999999);
+            modadh.Cotisation = (50 + (int)modadh.club.id_club);
             Adh.ModifierAdherent(modadh);
             Adh.AjouterUnClub(modadh.club, modadh);
+            modadh.club.AjouterClubAdh(modadh);
+            
+
+
+            
             
             this.Close();
             //modadh.club 

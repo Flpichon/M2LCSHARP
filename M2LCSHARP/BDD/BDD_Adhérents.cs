@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace M2LCSHARP.BDD
 {
     
    public class BDD_Adhérents : connexion_BDD
     {
         BDD_Clubs Club = new BDD_Clubs();
+
+        
+        
 
         public List<club> ClubAdh()
         {
@@ -23,14 +27,7 @@ namespace M2LCSHARP.BDD
 
         }
 
-        public List<club> ClubAdh_1(adherent Adh)
-        {
-
-            List<club> Listeclub = Club.ReadClub();
-            Listeclub.Remove(Adh.club);
-            return Listeclub;
-
-        }
+      
         public List<adherent> Readadherent()
         {
             
@@ -102,7 +99,7 @@ namespace M2LCSHARP.BDD
             using (connection)
             {
                 connection.Open();
-                string requete = "UPDATE `adherent` SET `Nom_adherent` = @nom, `Prenom_adherent` = @prenom, `Date_naissance_adherent` = @date, `Adresse_adherent` = @adresse, `Code_Postal_adherent` = @codepostal, `Ville_adherent` = @ville, `numero_licence` = @numero WHERE `adherent`.`id_adherent` = @id" ;
+                string requete = "UPDATE `adherent` SET `Nom_adherent` = @nom, `Prenom_adherent` = @prenom, `Date_naissance_adherent` = @date, `Adresse_adherent` = @adresse, `Code_Postal_adherent` = @codepostal, `Ville_adherent` = @ville, `numero_licence` = @numero, `cotisation_adherent`=@coti WHERE `adherent`.`id_adherent` = @id" ;
                 MySqlCommand cmd = new MySqlCommand(requete, connection);
                 cmd.Parameters.AddWithValue("@nom", adhérents.Nom);
                 cmd.Parameters.AddWithValue("@prenom", adhérents.Prenom);
@@ -112,7 +109,8 @@ namespace M2LCSHARP.BDD
                 cmd.Parameters.AddWithValue("@ville", adhérents.Ville);
                 cmd.Parameters.AddWithValue("@id", adhérents.Id);
                  cmd.Parameters.AddWithValue("@numero", adhérents.numero_licence);
-               
+                cmd.Parameters.AddWithValue("@coti", adhérents.Cotisation);
+
                 cmd.ExecuteNonQuery();
             }
         }

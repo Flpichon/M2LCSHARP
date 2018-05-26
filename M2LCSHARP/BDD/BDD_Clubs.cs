@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace M2LCSHARP.BDD
 {
-   public class BDD_Clubs : connexion_BDD
+    public class BDD_Clubs : connexion_BDD
 
     {
         public List<club> ReadClub()
@@ -25,7 +25,7 @@ namespace M2LCSHARP.BDD
             using (connection)
             {
                 connection.Open();
-                string requete = "select `id_club`,`Titre_club`,`url_club`,`Adresse_club`,`Code_Postal_club`,`Ville_club`,`mail_club`,`telephone_club`,type_club.libelle,type_club.id_type_club from club inner join type_club on club.id_type_club=type_club.id_type_club";
+                string requete = "SELECT `id_club`,`Titre_club`,`url_club`,`Adresse_club`,`Code_Postal_club`,`Ville_club`,`mail_club`,`telephone_club`,libelle,type_club.id_type_club from club inner join type_club on club.id_type_club=type_club.id_type_club order by `id_club`";
 
 
                 MySqlCommand cmd = new MySqlCommand(requete, connection);
@@ -34,22 +34,112 @@ namespace M2LCSHARP.BDD
                     while (datareader.Read())
                     {
                         typec = new type_club(Convert.ToInt32(datareader["id_type_club"]), (string)datareader["libelle"]);
-                        club = new club((string)datareader["Titre_club"], (string)datareader["url_club"], (string)datareader["Adresse_club"], (string)datareader["Code_Postal_club"], (string)datareader["Ville_club"],(string)datareader["mail_club"], Convert.ToInt32(datareader["telephone_club"]),typec);
+                        club = new club((string)datareader["Titre_club"], (string)datareader["url_club"], (string)datareader["Adresse_club"], (string)datareader["Code_Postal_club"], (string)datareader["Ville_club"], (string)datareader["mail_club"], Convert.ToInt32(datareader["telephone_club"]), typec);
                         club.id_club = Convert.ToInt32(datareader["id_club"]);
 
                         //typec.libelle = (string)datareader["libelle"];
                         //club.type.id_type = (int)datareader["id_type_club"];
                         liste.Add(club);
-                        
 
 
-                        
+
+
 
                     }
 
                 }
             }
             return liste;
+        }
+
+        public int Nombredadh(club club)
+        {
+            int Nbr = 0;
+            using (connection)
+            {
+                connection.Open();
+                string requete = "SELECT count(id_adherent) as Nbr from adherent where adherent.id_club=@id";
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                cmd.Parameters.AddWithValue("@id", club.id_club);
+                using (MySqlDataReader datareader = cmd.ExecuteReader())
+                {
+                    while (datareader.Read())
+                    {
+                        Nbr = Convert.ToInt32(datareader["Nbr"]);
+                    }
+                }
+            }
+
+            return Nbr;
+        }
+
+
+        public List<type_club> Liste_Type()
+        {
+            List<type_club> Laliste = new List<type_club>();
+            type_club type;
+            using (connection)
+            {
+                connection.Open();
+                string requete = "select * from type_club";
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                using (MySqlDataReader datareader = cmd.ExecuteReader())
+                {
+                    while (datareader.Read())
+                    {
+                        type = new type_club(Convert.ToInt32(datareader["id_type_club"]), (string)datareader["libelle"]);
+                        Laliste.Add(type);
+
+                    }
+                }
+
+
+            }
+            return Laliste;
+
+        }
+        public type_club RecupType(string lib)
+        {
+            type_club typeclu;
+            List <type_club> Liste= new List<type_club>();
+            using (connection)
+            {
+                connection.Open();
+                string requete = "select * from type_club where libelle=@libelle";
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                cmd.Parameters.AddWithValue("@libelle", lib);
+                using (MySqlDataReader datareader = cmd.ExecuteReader())
+                {
+                    while (datareader.Read())
+                    {
+                        typeclu = new type_club(Convert.ToInt32(datareader["id_type_club"]), (string)datareader["libelle"]);
+                        Liste.Add(typeclu);
+                    }
+                    
+                }
+
+            }
+            return Liste[0];
+
+        }
+        public void ajouterClub(club UnClub)
+        {
+            using (connection)
+            {
+                connection.Open();
+                string requete = "INSERT INTO `club` (`id_club`, `Titre_club`, `url_club`, `Adresse_club`, `Code_Postal_club`, `Ville_club`, `mail_club`, `telephone_club`, `id_type_club`) VALUES(NULL, @titre,@url,@adresse,@cp,@ville,@mail,@tel,@type)";
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                cmd.Parameters.AddWithValue("@titre", UnClub.Titre_club);
+                cmd.Parameters.AddWithValue("@url", UnClub.url_club);
+                cmd.Parameters.AddWithValue("@adresse", UnClub.Adresse_club);
+                cmd.Parameters.AddWithValue("@cp", UnClub.Code_Postal);
+                cmd.Parameters.AddWithValue("@ville", UnClub.Ville);
+                cmd.Parameters.AddWithValue("@mail", UnClub.mail_club);
+              
+                cmd.Parameters.AddWithValue("@tel", UnClub.telephone_club);
+                cmd.Parameters.AddWithValue("@type", UnClub.type.id_type);
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using M2LCSHARP.BDD;
+using M2LCSHARP.DATA;
 using M2LCSHARP.DATA_METHODES;
 using System;
 using System.Collections.Generic;
@@ -19,8 +20,9 @@ namespace M2LCSHARP.Vues
         public BDD_Clubs bADHC;
         
         
+        
 
-        public Gestion_Clubs(gestion_Clubs Ges)
+        public Gestion_Clubs(gestion_Clubs Ges, gestion_Adherents gAdhe)
         {
             InitializeComponent();
             GesClub = Ges;
@@ -31,20 +33,25 @@ namespace M2LCSHARP.Vues
         private void Gestion_Clubs_Load(object sender, EventArgs e)
         {
             //Dt_Club.gener
-            
+            GesClub.liste = bADHC.ReadClub();
             Dt_Club.AutoGenerateColumns = true;
             Dt_Club.AutoResizeColumns();
-            GesClub.liste = bADHC.ReadClub();
-            Dt_Club.DataSource = GesClub.liste;
-            Dt_Club.Columns["id_club"].HeaderText = "Id";
-            Dt_Club.Columns["type"].Visible = false;
-          //  Dt_Club.Columns["libelle"].Visible = true;
+            foreach (club club in GesClub.liste)
+            {
+               int nbr= bADHC.Nombredadh(club);
+                Dt_Club.Rows.Add(club.id_club, club.Titre_club, club.url_club, club.Code_Postal, club.Ville, club.Adresse_club,club.mail_club, club.telephone_club, club.type.libelle,nbr);
+
+            }
+            
+            
+         
             
         }
 
         private void btn_Ajouter_Clb_Click(object sender, EventArgs e)
         {
-
+            ajout_club ajtclub = new ajout_club(GesClub);
+            ajtclub.ShowDialog();
         }
     }
 }

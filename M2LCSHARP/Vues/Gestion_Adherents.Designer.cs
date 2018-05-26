@@ -107,7 +107,7 @@
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(75, 23);
             this.refresh.TabIndex = 4;
-            this.refresh.Text = "button1";
+            this.refresh.Text = "Rafraichir";
             this.refresh.UseVisualStyleBackColor = true;
             this.refresh.Click += new System.EventHandler(this.refresh_Click_1);
             // 

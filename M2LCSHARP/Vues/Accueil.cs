@@ -37,7 +37,7 @@ namespace M2LCSHARP
 
         private void btn_Club_Click(object sender, System.EventArgs e)
         {
-            Gestion_Clubs GC = new Gestion_Clubs(GClubs);
+            Gestion_Clubs GC = new Gestion_Clubs(GClubs,GAdhe);
             GC.ShowDialog();
         }
 

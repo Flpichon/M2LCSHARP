@@ -19,6 +19,7 @@ namespace M2LCSHARP.DATA
             this.mail_club = mail_club;
             this.telephone_club = telephone_club;
             type = tp;
+            adherents = new List<adherent>();
         }
 
         public int id_club { get; set; }
@@ -33,16 +34,15 @@ namespace M2LCSHARP.DATA
         public List<adherent> adherents { get; set; }
 
         public void AjouterClubAdh (adherent Adh)
-        { int i = 0;
+        { 
 
-            while(adherents[i]!=Adh || adherents.Count>i++)
+            foreach(adherent adh in adherents)
             {
-                i++;
-            }
-            if (adherents[i]!=Adh)
-            {
+                if (adh != Adh)
                 adherents.Add(Adh);
             }
+
+            
         }
 
 

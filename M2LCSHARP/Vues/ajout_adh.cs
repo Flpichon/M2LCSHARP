@@ -40,7 +40,7 @@ namespace M2LCSHARP.Vues
             //bADHC
             adherent adhajouté = new adherent(nom, prenom, Cp, Adresse, Ville);
             adhajouté.DateNaissance = naissance;
-            adhajouté.Cotisation = coti.Next(30, 80);
+            
             GesAdh.ajouter_Adherent(adhajouté);
             
             
