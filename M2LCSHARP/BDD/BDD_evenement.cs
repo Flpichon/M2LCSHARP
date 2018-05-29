@@ -76,5 +76,16 @@ namespace M2LCSHARP.BDD
 
             }
         }
+        public void Supprimer_Evenement(evenement evenement)
+        {
+            using (connection)
+            {
+                connection.Open();
+                string requete = "DELETE FROM `evenement` WHERE `evenement`.`id_evenement` =@id";
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                cmd.Parameters.AddWithValue("@id", evenement.id_evenement);
+                cmd.ExecuteNonQuery();
+            }
+        }
     }
 }

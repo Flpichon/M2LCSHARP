@@ -54,6 +54,8 @@ namespace M2LCSHARP.Vues
                         {
                             evenement evene = new evenement(titre, debut, fin, club);
                             BDDE.Ajouter_Evenement(evene);
+                        MessageBox.Show("Ajout de l'événement réussi", "ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
                         }
                         else MessageBox.Show("Attention aucun titre n'a été renseigné", "Aucun titre !", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }

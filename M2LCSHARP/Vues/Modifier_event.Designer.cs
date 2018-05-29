@@ -40,11 +40,13 @@
             this.lbl_ = new System.Windows.Forms.Label();
             this.txt_Fin_Event = new System.Windows.Forms.MaskedTextBox();
             this.lbl_Fin_Event = new System.Windows.Forms.Label();
+            this.btn_sup_event = new System.Windows.Forms.Button();
             this.ajout.SuspendLayout();
             this.SuspendLayout();
             // 
             // ajout
             // 
+            this.ajout.Controls.Add(this.btn_sup_event);
             this.ajout.Controls.Add(this.txt_club_Event);
             this.ajout.Controls.Add(this.lbl_erreur);
             this.ajout.Controls.Add(this.fermermod);
@@ -83,7 +85,7 @@
             // 
             // fermermod
             // 
-            this.fermermod.Location = new System.Drawing.Point(276, 229);
+            this.fermermod.Location = new System.Drawing.Point(306, 229);
             this.fermermod.Name = "fermermod";
             this.fermermod.Size = new System.Drawing.Size(75, 23);
             this.fermermod.TabIndex = 17;
@@ -92,7 +94,7 @@
             // 
             // btn_Event_Modifer
             // 
-            this.btn_Event_Modifer.Location = new System.Drawing.Point(146, 229);
+            this.btn_Event_Modifer.Location = new System.Drawing.Point(125, 229);
             this.btn_Event_Modifer.Name = "btn_Event_Modifer";
             this.btn_Event_Modifer.Size = new System.Drawing.Size(75, 23);
             this.btn_Event_Modifer.TabIndex = 16;
@@ -168,6 +170,16 @@
             this.lbl_Fin_Event.TabIndex = 7;
             this.lbl_Fin_Event.Text = "Fin";
             // 
+            // btn_sup_event
+            // 
+            this.btn_sup_event.Location = new System.Drawing.Point(215, 229);
+            this.btn_sup_event.Name = "btn_sup_event";
+            this.btn_sup_event.Size = new System.Drawing.Size(75, 23);
+            this.btn_sup_event.TabIndex = 25;
+            this.btn_sup_event.Text = "Supprimer";
+            this.btn_sup_event.UseVisualStyleBackColor = true;
+            this.btn_sup_event.Click += new System.EventHandler(this.btn_sup_event_Click);
+            // 
             // Modifier_event
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,5 +212,6 @@
         private System.Windows.Forms.Label lbl_;
         private System.Windows.Forms.MaskedTextBox txt_Fin_Event;
         private System.Windows.Forms.Label lbl_Fin_Event;
+        private System.Windows.Forms.Button btn_sup_event;
     }
 }

@@ -25,22 +25,30 @@ namespace M2LCSHARP.Vues
 
         private void btn_Club_Valid_Click(object sender, EventArgs e)
         {
-            string Titre = txt_Titre_Club.Text;
-            string Url = txt_Url_Club.Text;
-            string CP = txt_Cp_Club.Text;
-            string Ville = txt_Ville_CLub.Text;
-            string adresse = txt_Adr_Club.Text;
-            string Mail = txt_Mail_Club.Text;
-            string Tel = txt_Tel_Club.Text;
-            string type = cbb_type_club.SelectedItem.ToString();
-
-            club Nclub = new club(Titre, Url, adresse, CP, Ville, Mail,int.Parse(Tel), BDDC.RecupType(type));
-            gest_club.ajouter_Club(Nclub);
+            
             try
-            { BDDC.ajouterClub(Nclub); }
+            {
+                string Titre = txt_Titre_Club.Text;
+                string Url = txt_Url_Club.Text;
+                string CP = txt_Cp_Club.Text;
+                string Ville = txt_Ville_CLub.Text;
+                string adresse = txt_Adr_Club.Text;
+                string Mail = txt_Mail_Club.Text;
+                string Tel = txt_Tel_Club.Text;
+                string type = cbb_type_club.SelectedItem.ToString();
+                if (Titre.Length != 0 && Url.Length != 0 && CP.Length != 0 && Ville.Length != 0 && adresse.Length != 0 && Mail.Length != 0 && Tel.Length != 0 & type.Length != 0)
+                {
+                    club Nclub = new club(Titre, Url, adresse, CP, Ville, Mail, int.Parse(Tel), BDDC.RecupType(type));
+                    gest_club.ajouter_Club(Nclub);
+                    BDDC.ajouterClub(Nclub);
+                    MessageBox.Show("Ajout du club réussi", "ajout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else MessageBox.Show("Veuillez remplir tous les champs", "champ(s) non rempli(s)", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             catch
             {
-                MessageBox.Show("Nom de club déjà prit.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vérifiez que vous avez entré un nom de club unique et que tous les champs sont remplis", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

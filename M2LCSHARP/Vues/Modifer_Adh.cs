@@ -54,26 +54,34 @@ namespace M2LCSHARP.Vues
 
         private void btn_Adh_Valid_Mod_Click(object sender, EventArgs e)
         {
-            Random rand = new Random();
-            modadh.Nom = txt_Nom_Adh_Mod.Text;
-            modadh.Prenom = txt_Prenom_Adh_Mod.Text;
-            modadh.DateNaissance = DateTime.Parse(txt_naissance_adh_Mod.Text);
-            modadh.CodePostal = txt_Cp_Adh_Mod.Text;
-            modadh.Ville = txt_Ville_Adh_Mod.Text;
-            modadh.Adresse = txt_Adr_Adh_Mod.Text;
-            modadh.club = GestionC.RechercherClub(cbb_Adh_Club_Mod.Text);
-            modadh.numero_licence = rand.Next(123456, 999999);
-            modadh.Cotisation = (50 + (int)modadh.club.id_club);
-            Adh.ModifierAdherent(modadh);
-            Adh.AjouterUnClub(modadh.club, modadh);
-            modadh.club.AjouterClubAdh(modadh);
-            
+
+            try { modadh.DateNaissance = DateTime.Parse(txt_naissance_adh_Mod.Text);
+                Random rand = new Random();
+                if (txt_Nom_Adh_Mod.Text.Length != 0 && txt_Prenom_Adh_Mod.Text.Length != 0 && txt_Cp_Adh_Mod.Text.Length != 0 && txt_Ville_Adh_Mod.Text.Length != 0 && txt_Adr_Adh_Mod.Text.Length != 0)
+                {
+                    modadh.Nom = txt_Nom_Adh_Mod.Text;
+                    modadh.Prenom = txt_Prenom_Adh_Mod.Text;
+
+                    modadh.CodePostal = txt_Cp_Adh_Mod.Text;
+                    modadh.Ville = txt_Ville_Adh_Mod.Text;
+                    modadh.Adresse = txt_Adr_Adh_Mod.Text;
+                    modadh.club = GestionC.RechercherClub(cbb_Adh_Club_Mod.Text);
+                    modadh.numero_licence = rand.Next(123456, 999999);
+                    modadh.Cotisation = (50 + (int)modadh.club.id_club);
+                    Adh.ModifierAdherent(modadh);
+                    Adh.AjouterUnClub(modadh.club, modadh);
+                    modadh.club.AjouterClubAdh(modadh);
+                    MessageBox.Show("Modifications Effectuées", "Modifications", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else MessageBox.Show("Veuillez remplir tous les champs", "Champ(s) non rempli(s)", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 
-            
-            
-            this.Close();
-            //modadh.club 
+            }
+            catch
+            {
+                MessageBox.Show("Veuillez renseigner une date valide", "Date", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
         }
 
@@ -89,8 +97,13 @@ namespace M2LCSHARP.Vues
 
         private void btn_suppr_Adh_Click(object sender, EventArgs e)
         {
-            Adh.SupprimerAdherent(modadh);
-            this.Close();
+            try { Adh.SupprimerAdherent(modadh);
+                MessageBox.Show("Adhérent supprimé", "Supression réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch { MessageBox.Show("Impossible de supprimer l'adhérent", "Supression impossible", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            
+            
         }
     }
 }   

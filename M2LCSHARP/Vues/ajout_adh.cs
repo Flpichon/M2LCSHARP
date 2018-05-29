@@ -32,27 +32,31 @@ namespace M2LCSHARP.Vues
             Random coti = new Random();
             string nom = txt_Nom_Adh.Text;
             string prenom = txt_Prenom_Adh.Text;
-            DateTime naissance = DateTime.Parse(txt_naissance_adh.Text);
-            string Cp = txt_Cp_Adh.Text;
-            string Ville = txt_Ville_Adh.Text;
-            string Adresse = txt_Adr_Adh.Text;
+            try { DateTime naissance = DateTime.Parse(txt_naissance_adh.Text);
+                string Cp = txt_Cp_Adh.Text;
+                string Ville = txt_Ville_Adh.Text;
+                string Adresse = txt_Adr_Adh.Text;
 
-            if (nom.Length != 0 && prenom.Length != 0 && naissance.ToString().Length != 0 && Cp.Length!=0 && Ville.Length!=0 && Adresse.Length!=0)
-            {
-                adherent adhajouté = new adherent(nom, prenom, Cp, Adresse, Ville);
-                adhajouté.DateNaissance = naissance;
+                if (nom.Length != 0 && prenom.Length != 0 && naissance.ToString().Length != 0 && Cp.Length != 0 && Ville.Length != 0 && Adresse.Length != 0)
+                {
+                    adherent adhajouté = new adherent(nom, prenom, Cp, Adresse, Ville);
+                    adhajouté.DateNaissance = naissance;
 
-                GesAdh.ajouter_Adherent(adhajouté);
-
-
-                bADH.ajouterAdherent(adhajouté);
+                    GesAdh.ajouter_Adherent(adhajouté);
 
 
-                Vidertext(ajout);
+                    bADH.ajouterAdherent(adhajouté);
+
+
+                    MessageBox.Show("L'adhérent a bien été ajouté", "ajout réussi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("Veuillez remplir tous les champs !", "champ(s) manquant(s)", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else 
-                MessageBox.Show("")
-           
+            catch { MessageBox.Show("Veuillez entrer une date valide !", "Date", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+
+            
         }
         public static void Vidertext(Control parent)
         {

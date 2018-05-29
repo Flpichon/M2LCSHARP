@@ -69,5 +69,14 @@ namespace M2LCSHARP.Vues
             this.Close();
            
         }
+
+        private void btn_sup_event_Click(object sender, EventArgs e)
+        {
+            try { BDDE.Supprimer_Evenement(E);
+                MessageBox.Show("Suppression réussite", "suppression", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch { MessageBox.Show("Suppression impossible", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
     }
 }

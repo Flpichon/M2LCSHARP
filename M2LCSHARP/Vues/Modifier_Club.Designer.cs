@@ -137,6 +137,7 @@
             this.txt_Titre_Club.Location = new System.Drawing.Point(149, 17);
             this.txt_Titre_Club.Name = "txt_Titre_Club";
             this.txt_Titre_Club.PromptChar = ' ';
+            this.txt_Titre_Club.ReadOnly = true;
             this.txt_Titre_Club.Size = new System.Drawing.Size(119, 20);
             this.txt_Titre_Club.TabIndex = 0;
             // 
