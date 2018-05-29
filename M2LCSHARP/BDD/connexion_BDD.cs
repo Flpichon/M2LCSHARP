@@ -24,7 +24,8 @@ namespace M2LCSHARP.BDD
             string password = "";
             connectionString = "SERVER=" + server + ";" + "PORT=" + port + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
-            this.connection = new MySqlConnection(connectionString);
+            try { this.connection = new MySqlConnection(connectionString); }
+            catch { };
             
         }
 
