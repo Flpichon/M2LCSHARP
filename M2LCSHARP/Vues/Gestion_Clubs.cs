@@ -39,7 +39,9 @@ namespace M2LCSHARP.Vues
             foreach (club club in GesClub.liste)
             {
                int nbr= bADHC.Nombredadh(club);
-                Dt_Club.Rows.Add(club.id_club, club.Titre_club, club.url_club, club.Code_Postal, club.Ville, club.Adresse_club,club.mail_club, club.telephone_club, club.type.libelle,nbr);
+                int nbrE = bADHC.Nombreevenement(club);
+
+                Dt_Club.Rows.Add(club.id_club, club.Titre_club, club.url_club, club.Code_Postal, club.Ville, club.Adresse_club, club.mail_club, club.telephone_club, club.type.libelle, nbr,nbrE);
 
             }
             
@@ -68,7 +70,8 @@ namespace M2LCSHARP.Vues
             foreach (club club in GesClub.liste)
             {
                 int nbr = bADHC.Nombredadh(club);
-                Dt_Club.Rows.Add(club.id_club, club.Titre_club, club.url_club, club.Code_Postal, club.Ville, club.Adresse_club, club.mail_club, club.telephone_club, club.type.libelle, nbr);
+                int nbrE = bADHC.Nombreevenement(club);
+                Dt_Club.Rows.Add(club.id_club, club.Titre_club, club.url_club, club.Code_Postal, club.Ville, club.Adresse_club, club.mail_club, club.telephone_club, club.type.libelle, nbr,nbrE);
 
             }
         }

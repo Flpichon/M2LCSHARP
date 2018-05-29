@@ -254,6 +254,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 316);
             this.Controls.Add(this.Modi);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(564, 355);
+            this.MinimumSize = new System.Drawing.Size(564, 355);
             this.Name = "Modifer_Adh";
             this.Text = "Modifer_Adh";
             this.Load += new System.EventHandler(this.Modifer_Adh_Load);

@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.ajout = new System.Windows.Forms.GroupBox();
+            this.lbl_erreur = new System.Windows.Forms.Label();
+            this.lbl_type_club = new System.Windows.Forms.Label();
+            this.cbb_type_club = new System.Windows.Forms.ComboBox();
             this.txt_Tel_Club = new System.Windows.Forms.MaskedTextBox();
             this.lbl_Tel_Club = new System.Windows.Forms.Label();
             this.txt_Mail_Club = new System.Windows.Forms.MaskedTextBox();
@@ -45,9 +48,6 @@
             this.txt_Ville_CLub = new System.Windows.Forms.MaskedTextBox();
             this.txt_Cp_Club = new System.Windows.Forms.MaskedTextBox();
             this.lbl_Cp_Club = new System.Windows.Forms.Label();
-            this.cbb_type_club = new System.Windows.Forms.ComboBox();
-            this.lbl_type_club = new System.Windows.Forms.Label();
-            this.lbl_erreur = new System.Windows.Forms.Label();
             this.ajout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +78,32 @@
             this.ajout.TabIndex = 18;
             this.ajout.TabStop = false;
             this.ajout.Text = "ajouter";
+            // 
+            // lbl_erreur
+            // 
+            this.lbl_erreur.AutoSize = true;
+            this.lbl_erreur.ForeColor = System.Drawing.Color.Red;
+            this.lbl_erreur.Location = new System.Drawing.Point(364, 155);
+            this.lbl_erreur.Name = "lbl_erreur";
+            this.lbl_erreur.Size = new System.Drawing.Size(0, 13);
+            this.lbl_erreur.TabIndex = 23;
+            // 
+            // lbl_type_club
+            // 
+            this.lbl_type_club.AutoSize = true;
+            this.lbl_type_club.Location = new System.Drawing.Point(385, 65);
+            this.lbl_type_club.Name = "lbl_type_club";
+            this.lbl_type_club.Size = new System.Drawing.Size(69, 13);
+            this.lbl_type_club.TabIndex = 22;
+            this.lbl_type_club.Text = "Type du club";
+            // 
+            // cbb_type_club
+            // 
+            this.cbb_type_club.FormattingEnabled = true;
+            this.cbb_type_club.Location = new System.Drawing.Point(364, 96);
+            this.cbb_type_club.Name = "cbb_type_club";
+            this.cbb_type_club.Size = new System.Drawing.Size(121, 21);
+            this.cbb_type_club.TabIndex = 21;
             // 
             // txt_Tel_Club
             // 
@@ -227,38 +253,15 @@
             this.lbl_Cp_Club.TabIndex = 7;
             this.lbl_Cp_Club.Text = "Code Postal";
             // 
-            // cbb_type_club
-            // 
-            this.cbb_type_club.FormattingEnabled = true;
-            this.cbb_type_club.Location = new System.Drawing.Point(364, 96);
-            this.cbb_type_club.Name = "cbb_type_club";
-            this.cbb_type_club.Size = new System.Drawing.Size(121, 21);
-            this.cbb_type_club.TabIndex = 21;
-            // 
-            // lbl_type_club
-            // 
-            this.lbl_type_club.AutoSize = true;
-            this.lbl_type_club.Location = new System.Drawing.Point(385, 65);
-            this.lbl_type_club.Name = "lbl_type_club";
-            this.lbl_type_club.Size = new System.Drawing.Size(69, 13);
-            this.lbl_type_club.TabIndex = 22;
-            this.lbl_type_club.Text = "Type du club";
-            // 
-            // lbl_erreur
-            // 
-            this.lbl_erreur.AutoSize = true;
-            this.lbl_erreur.ForeColor = System.Drawing.Color.Red;
-            this.lbl_erreur.Location = new System.Drawing.Point(364, 155);
-            this.lbl_erreur.Name = "lbl_erreur";
-            this.lbl_erreur.Size = new System.Drawing.Size(0, 13);
-            this.lbl_erreur.TabIndex = 23;
-            // 
             // ajout_club
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 316);
             this.Controls.Add(this.ajout);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(564, 355);
+            this.MinimumSize = new System.Drawing.Size(564, 355);
             this.Name = "ajout_club";
             this.Text = "ajout_club";
             this.Load += new System.EventHandler(this.ajout_club_Load);

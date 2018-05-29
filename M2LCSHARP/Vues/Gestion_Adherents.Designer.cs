@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btn_Ajouter_Adh = new System.Windows.Forms.Button();
-            this.fermer = new System.Windows.Forms.Button();
-            this.refresh = new System.Windows.Forms.Button();
             this.clubtitre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +38,10 @@
             this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cotisation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Club = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_Ajouter_Adh = new System.Windows.Forms.Button();
+            this.fermer = new System.Windows.Forms.Button();
+            this.refresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,47 +69,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(524, 192);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick_1);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(217, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Liste des Adhérents";
-            // 
-            // btn_Ajouter_Adh
-            // 
-            this.btn_Ajouter_Adh.BackColor = System.Drawing.Color.Lime;
-            this.btn_Ajouter_Adh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Ajouter_Adh.Location = new System.Drawing.Point(12, 251);
-            this.btn_Ajouter_Adh.Name = "btn_Ajouter_Adh";
-            this.btn_Ajouter_Adh.Size = new System.Drawing.Size(75, 45);
-            this.btn_Ajouter_Adh.TabIndex = 2;
-            this.btn_Ajouter_Adh.Text = "Ajouter";
-            this.btn_Ajouter_Adh.UseVisualStyleBackColor = false;
-            this.btn_Ajouter_Adh.Click += new System.EventHandler(this.btn_Ajouter_Adh_Click);
-            // 
-            // fermer
-            // 
-            this.fermer.Location = new System.Drawing.Point(450, 273);
-            this.fermer.Name = "fermer";
-            this.fermer.Size = new System.Drawing.Size(75, 23);
-            this.fermer.TabIndex = 3;
-            this.fermer.Text = "fermer";
-            this.fermer.UseVisualStyleBackColor = true;
-            this.fermer.Click += new System.EventHandler(this.fermer_Click);
-            // 
-            // refresh
-            // 
-            this.refresh.Location = new System.Drawing.Point(369, 273);
-            this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(75, 23);
-            this.refresh.TabIndex = 4;
-            this.refresh.Text = "Rafraichir";
-            this.refresh.UseVisualStyleBackColor = true;
-            this.refresh.Click += new System.EventHandler(this.refresh_Click_1);
             // 
             // clubtitre
             // 
@@ -165,6 +124,47 @@
             this.Club.Name = "Club";
             this.Club.ReadOnly = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(217, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Liste des Adhérents";
+            // 
+            // btn_Ajouter_Adh
+            // 
+            this.btn_Ajouter_Adh.BackColor = System.Drawing.Color.Lime;
+            this.btn_Ajouter_Adh.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Ajouter_Adh.Location = new System.Drawing.Point(12, 251);
+            this.btn_Ajouter_Adh.Name = "btn_Ajouter_Adh";
+            this.btn_Ajouter_Adh.Size = new System.Drawing.Size(75, 45);
+            this.btn_Ajouter_Adh.TabIndex = 2;
+            this.btn_Ajouter_Adh.Text = "Ajouter";
+            this.btn_Ajouter_Adh.UseVisualStyleBackColor = false;
+            this.btn_Ajouter_Adh.Click += new System.EventHandler(this.btn_Ajouter_Adh_Click);
+            // 
+            // fermer
+            // 
+            this.fermer.Location = new System.Drawing.Point(450, 273);
+            this.fermer.Name = "fermer";
+            this.fermer.Size = new System.Drawing.Size(75, 23);
+            this.fermer.TabIndex = 3;
+            this.fermer.Text = "fermer";
+            this.fermer.UseVisualStyleBackColor = true;
+            this.fermer.Click += new System.EventHandler(this.fermer_Click);
+            // 
+            // refresh
+            // 
+            this.refresh.Location = new System.Drawing.Point(369, 273);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(75, 23);
+            this.refresh.TabIndex = 4;
+            this.refresh.Text = "Rafraichir";
+            this.refresh.UseVisualStyleBackColor = true;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click_1);
+            // 
             // Gestion_Adherents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,6 +175,9 @@
             this.Controls.Add(this.btn_Ajouter_Adh);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(564, 365);
+            this.MinimumSize = new System.Drawing.Size(564, 365);
             this.Name = "Gestion_Adherents";
             this.Text = "Gestion_Adherents";
             this.Load += new System.EventHandler(this.Gestion_Adherents_Load);

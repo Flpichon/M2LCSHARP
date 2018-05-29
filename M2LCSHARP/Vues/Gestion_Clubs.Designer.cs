@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.Dt_Club = new System.Windows.Forms.DataGridView();
+            this.btn_Ajouter_Clb = new System.Windows.Forms.Button();
+            this.btnrefresh = new System.Windows.Forms.Button();
+            this.btncloseclub = new System.Windows.Forms.Button();
             this.id_club = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Titre_club = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.url_club = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,9 +42,7 @@
             this.Telephone_Club = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.libelle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nbr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_Ajouter_Clb = new System.Windows.Forms.Button();
-            this.btnrefresh = new System.Windows.Forms.Button();
-            this.btncloseclub = new System.Windows.Forms.Button();
+            this.nbrE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Dt_Club)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,13 +67,47 @@
             this.Mail_Club,
             this.Telephone_Club,
             this.libelle,
-            this.Nbr});
+            this.Nbr,
+            this.nbrE});
             this.Dt_Club.Location = new System.Drawing.Point(12, 27);
             this.Dt_Club.Name = "Dt_Club";
             this.Dt_Club.ReadOnly = true;
             this.Dt_Club.Size = new System.Drawing.Size(524, 192);
             this.Dt_Club.TabIndex = 1;
             this.Dt_Club.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Dt_Club_RowHeaderMouseDoubleClick);
+            // 
+            // btn_Ajouter_Clb
+            // 
+            this.btn_Ajouter_Clb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btn_Ajouter_Clb.BackColor = System.Drawing.Color.Lime;
+            this.btn_Ajouter_Clb.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Ajouter_Clb.Location = new System.Drawing.Point(12, 247);
+            this.btn_Ajouter_Clb.Name = "btn_Ajouter_Clb";
+            this.btn_Ajouter_Clb.Size = new System.Drawing.Size(75, 45);
+            this.btn_Ajouter_Clb.TabIndex = 3;
+            this.btn_Ajouter_Clb.Text = "Ajouter";
+            this.btn_Ajouter_Clb.UseVisualStyleBackColor = false;
+            this.btn_Ajouter_Clb.Click += new System.EventHandler(this.btn_Ajouter_Clb_Click);
+            // 
+            // btnrefresh
+            // 
+            this.btnrefresh.Location = new System.Drawing.Point(370, 269);
+            this.btnrefresh.Name = "btnrefresh";
+            this.btnrefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnrefresh.TabIndex = 4;
+            this.btnrefresh.Text = "raffraichir";
+            this.btnrefresh.UseVisualStyleBackColor = true;
+            this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
+            // 
+            // btncloseclub
+            // 
+            this.btncloseclub.Location = new System.Drawing.Point(451, 269);
+            this.btncloseclub.Name = "btncloseclub";
+            this.btncloseclub.Size = new System.Drawing.Size(75, 23);
+            this.btncloseclub.TabIndex = 5;
+            this.btncloseclub.Text = "fermer";
+            this.btncloseclub.UseVisualStyleBackColor = true;
+            this.btncloseclub.Click += new System.EventHandler(this.btncloseclub_Click);
             // 
             // id_club
             // 
@@ -134,38 +169,11 @@
             this.Nbr.Name = "Nbr";
             this.Nbr.ReadOnly = true;
             // 
-            // btn_Ajouter_Clb
+            // nbrE
             // 
-            this.btn_Ajouter_Clb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_Ajouter_Clb.BackColor = System.Drawing.Color.Lime;
-            this.btn_Ajouter_Clb.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Ajouter_Clb.Location = new System.Drawing.Point(12, 247);
-            this.btn_Ajouter_Clb.Name = "btn_Ajouter_Clb";
-            this.btn_Ajouter_Clb.Size = new System.Drawing.Size(75, 45);
-            this.btn_Ajouter_Clb.TabIndex = 3;
-            this.btn_Ajouter_Clb.Text = "Ajouter";
-            this.btn_Ajouter_Clb.UseVisualStyleBackColor = false;
-            this.btn_Ajouter_Clb.Click += new System.EventHandler(this.btn_Ajouter_Clb_Click);
-            // 
-            // btnrefresh
-            // 
-            this.btnrefresh.Location = new System.Drawing.Point(370, 269);
-            this.btnrefresh.Name = "btnrefresh";
-            this.btnrefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnrefresh.TabIndex = 4;
-            this.btnrefresh.Text = "raffraichir";
-            this.btnrefresh.UseVisualStyleBackColor = true;
-            this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
-            // 
-            // btncloseclub
-            // 
-            this.btncloseclub.Location = new System.Drawing.Point(451, 269);
-            this.btncloseclub.Name = "btncloseclub";
-            this.btncloseclub.Size = new System.Drawing.Size(75, 23);
-            this.btncloseclub.TabIndex = 5;
-            this.btncloseclub.Text = "fermer";
-            this.btncloseclub.UseVisualStyleBackColor = true;
-            this.btncloseclub.Click += new System.EventHandler(this.btncloseclub_Click);
+            this.nbrE.HeaderText = "Nombre d\'évenements";
+            this.nbrE.Name = "nbrE";
+            this.nbrE.ReadOnly = true;
             // 
             // Gestion_Clubs
             // 
@@ -191,6 +199,8 @@
 
         private System.Windows.Forms.DataGridView Dt_Club;
         private System.Windows.Forms.Button btn_Ajouter_Clb;
+        private System.Windows.Forms.Button btnrefresh;
+        private System.Windows.Forms.Button btncloseclub;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_club;
         private System.Windows.Forms.DataGridViewTextBoxColumn Titre_club;
         private System.Windows.Forms.DataGridViewTextBoxColumn url_club;
@@ -201,7 +211,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telephone_Club;
         private System.Windows.Forms.DataGridViewTextBoxColumn libelle;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nbr;
-        private System.Windows.Forms.Button btnrefresh;
-        private System.Windows.Forms.Button btncloseclub;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nbrE;
     }
 }

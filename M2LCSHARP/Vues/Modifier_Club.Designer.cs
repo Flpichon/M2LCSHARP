@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.ajout = new System.Windows.Forms.GroupBox();
+            this.btn_Annuler = new System.Windows.Forms.Button();
             this.lbl_erreur = new System.Windows.Forms.Label();
             this.txt_Tel_Club = new System.Windows.Forms.MaskedTextBox();
             this.lbl_Tel_Club = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.txt_Ville_CLub = new System.Windows.Forms.MaskedTextBox();
             this.txt_Cp_Club = new System.Windows.Forms.MaskedTextBox();
             this.lbl_Cp_Club = new System.Windows.Forms.Label();
-            this.btn_Annuler = new System.Windows.Forms.Button();
             this.ajout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +76,16 @@
             this.ajout.TabIndex = 19;
             this.ajout.TabStop = false;
             this.ajout.Text = "modifier";
+            // 
+            // btn_Annuler
+            // 
+            this.btn_Annuler.Location = new System.Drawing.Point(390, 210);
+            this.btn_Annuler.Name = "btn_Annuler";
+            this.btn_Annuler.Size = new System.Drawing.Size(75, 23);
+            this.btn_Annuler.TabIndex = 24;
+            this.btn_Annuler.Text = "Annuler";
+            this.btn_Annuler.UseVisualStyleBackColor = true;
+            this.btn_Annuler.Click += new System.EventHandler(this.btn_Annuler_Click);
             // 
             // lbl_erreur
             // 
@@ -234,22 +244,15 @@
             this.lbl_Cp_Club.TabIndex = 7;
             this.lbl_Cp_Club.Text = "Code Postal";
             // 
-            // btn_Annuler
-            // 
-            this.btn_Annuler.Location = new System.Drawing.Point(390, 210);
-            this.btn_Annuler.Name = "btn_Annuler";
-            this.btn_Annuler.Size = new System.Drawing.Size(75, 23);
-            this.btn_Annuler.TabIndex = 24;
-            this.btn_Annuler.Text = "Annuler";
-            this.btn_Annuler.UseVisualStyleBackColor = true;
-            this.btn_Annuler.Click += new System.EventHandler(this.btn_Annuler_Click);
-            // 
             // Modifier_Club
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 275);
             this.Controls.Add(this.ajout);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(540, 314);
+            this.MinimumSize = new System.Drawing.Size(540, 314);
             this.Name = "Modifier_Club";
             this.Text = "Modifier_Club";
             this.Load += new System.EventHandler(this.Modifier_Club_Load);

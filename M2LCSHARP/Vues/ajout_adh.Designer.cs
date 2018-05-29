@@ -44,8 +44,8 @@
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.btn_Adh_Valid = new System.Windows.Forms.Button();
             this.ajout = new System.Windows.Forms.GroupBox();
-            this.fermeraj = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.fermeraj = new System.Windows.Forms.Button();
             this.ajout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -218,6 +218,15 @@
             this.ajout.TabStop = false;
             this.ajout.Text = "ajouter";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(146, 254);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(228, 13);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Choix disponible après la création de l\'adhérent";
+            // 
             // fermeraj
             // 
             this.fermeraj.Location = new System.Drawing.Point(388, 274);
@@ -228,21 +237,15 @@
             this.fermeraj.UseVisualStyleBackColor = true;
             this.fermeraj.Click += new System.EventHandler(this.fermeraj_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(146, 254);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(228, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Choix disponible après la création de l\'adhérent";
-            // 
             // ajout_adh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 316);
             this.Controls.Add(this.ajout);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(564, 355);
+            this.MinimumSize = new System.Drawing.Size(564, 355);
             this.Name = "ajout_adh";
             this.Text = "ajout_adh";
             this.Load += new System.EventHandler(this.ajout_adh_Load);

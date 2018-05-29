@@ -72,7 +72,26 @@ namespace M2LCSHARP.BDD
 
             return Nbr;
         }
+        public int Nombreevenement(club club)
+        {
+            int Nbr = 0;
+            using (connection)
+            {
+                connection.Open();
+                string requete = "call compterevent(@id)";
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                cmd.Parameters.AddWithValue("@id", club.id_club);
+                using (MySqlDataReader datareader = cmd.ExecuteReader())
+                {
+                    while (datareader.Read())
+                    {
+                        Nbr = Convert.ToInt32(datareader["nbrE"]);
+                    }
+                }
+            }
 
+            return Nbr;
+        }
 
         public List<type_club> Liste_Type()
         {
