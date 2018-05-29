@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace M2LCSHARP.DATA
 {
-     class evenement
+     public class evenement
     {
+        public evenement(string titre_evenement, DateTime debut_evenement, DateTime fin_evenement, club club)
+        {
+            Titre_evenement = titre_evenement;
+            Debut_evenement = debut_evenement;
+            Fin_evenement = fin_evenement;
+            Club = club;
+        }
+
         public int id_evenement { get; set; }
         public string Titre_evenement { get; set; }
         public DateTime Debut_evenement { get; set; }

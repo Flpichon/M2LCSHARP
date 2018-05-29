@@ -33,6 +33,11 @@ namespace M2LCSHARP.DATA_METHODES
             
         }
 
+        public club indexclub(int i)
+        {
+            return liste[i];
+        }
+
 
     }
 }

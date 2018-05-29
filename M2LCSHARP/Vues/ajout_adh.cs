@@ -36,18 +36,22 @@ namespace M2LCSHARP.Vues
             string Cp = txt_Cp_Adh.Text;
             string Ville = txt_Ville_Adh.Text;
             string Adresse = txt_Adr_Adh.Text;
-            // club Clubadh=cbb_Adh_Club.
-            //bADHC
-            adherent adhajouté = new adherent(nom, prenom, Cp, Adresse, Ville);
-            adhajouté.DateNaissance = naissance;
-            
-            GesAdh.ajouter_Adherent(adhajouté);
-            
-            
-            bADH.ajouterAdherent(adhajouté);
-            
-          
-            Vidertext(ajout);
+
+            if (nom.Length != 0 && prenom.Length != 0 && naissance.ToString().Length != 0 && Cp.Length!=0 && Ville.Length!=0 && Adresse.Length!=0)
+            {
+                adherent adhajouté = new adherent(nom, prenom, Cp, Adresse, Ville);
+                adhajouté.DateNaissance = naissance;
+
+                GesAdh.ajouter_Adherent(adhajouté);
+
+
+                bADH.ajouterAdherent(adhajouté);
+
+
+                Vidertext(ajout);
+            }
+            else 
+                MessageBox.Show("")
            
         }
         public static void Vidertext(Control parent)

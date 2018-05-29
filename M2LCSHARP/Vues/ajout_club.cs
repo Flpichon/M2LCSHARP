@@ -51,5 +51,10 @@ namespace M2LCSHARP.Vues
                 cbb_type_club.Items.Add(item.libelle);
             }
         }
+
+        private void fermeraj_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

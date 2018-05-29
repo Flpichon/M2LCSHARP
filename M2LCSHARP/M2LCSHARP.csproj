@@ -77,8 +77,10 @@
   <ItemGroup>
     <Compile Include="BDD\BDD_Adhérents.cs" />
     <Compile Include="BDD\BDD_Clubs.cs" />
+    <Compile Include="BDD\BDD_evenement.cs" />
     <Compile Include="BDD\connexion_BDD.cs" />
     <Compile Include="DATA_METHODES\gestion_Clubs.cs" />
+    <Compile Include="DATA_METHODES\gestion_Evenements.cs" />
     <Compile Include="Vues\Accueil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +107,12 @@
     <Compile Include="Vues\ajout_club.Designer.cs">
       <DependentUpon>ajout_club.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vues\ajout_event.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vues\ajout_event.Designer.cs">
+      <DependentUpon>ajout_event.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vues\Gestion_Adherents.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,11 +125,29 @@
     <Compile Include="Vues\Gestion_Clubs.Designer.cs">
       <DependentUpon>Gestion_Clubs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vues\Gestion_Evenements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vues\Gestion_Evenements.Designer.cs">
+      <DependentUpon>Gestion_Evenements.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vues\Modifer_Adh.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vues\Modifer_Adh.Designer.cs">
       <DependentUpon>Modifer_Adh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vues\Modifier_Club.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vues\Modifier_Club.Designer.cs">
+      <DependentUpon>Modifier_Club.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vues\Modifier_event.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vues\Modifier_event.Designer.cs">
+      <DependentUpon>Modifier_event.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -141,14 +167,26 @@
     <EmbeddedResource Include="Vues\ajout_club.resx">
       <DependentUpon>ajout_club.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vues\ajout_event.resx">
+      <DependentUpon>ajout_event.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vues\Gestion_Adherents.resx">
       <DependentUpon>Gestion_Adherents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vues\Gestion_Clubs.resx">
       <DependentUpon>Gestion_Clubs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vues\Gestion_Evenements.resx">
+      <DependentUpon>Gestion_Evenements.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vues\Modifer_Adh.resx">
       <DependentUpon>Modifer_Adh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vues\Modifier_Club.resx">
+      <DependentUpon>Modifier_Club.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vues\Modifier_event.resx">
+      <DependentUpon>Modifier_event.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="BDD\.vs\BDD\v15\.suo" />
     <None Include="BDD\.vs\ProjectSettings.json" />

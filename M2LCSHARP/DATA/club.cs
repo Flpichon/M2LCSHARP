@@ -34,15 +34,26 @@ namespace M2LCSHARP.DATA
         public List<adherent> adherents { get; set; }
 
         public void AjouterClubAdh (adherent Adh)
-        { 
-
-            foreach(adherent adh in adherents)
+        {   int nbr = 0;
+            int taille = adherents.Count;
+            if (taille!=0)
             {
-                if (adh != Adh)
-                adherents.Add(Adh);
-            }
+                foreach (var item in adherents)
+                {
+                    if (item.Id==Adh.Id) nbr++;
 
+
+
+                }
+                if (nbr == 0) adherents.Add(Adh);
+            }
+            else adherents.Add(Adh);
             
+           
+               
+            
+
+
         }
 
 

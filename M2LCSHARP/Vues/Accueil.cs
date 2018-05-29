@@ -11,13 +11,15 @@ namespace M2LCSHARP
 
        gestion_Adherents GAdhe;
         gestion_Clubs GClubs;
+        gestion_Evenements GEvent;
 
         public Accueil()
         {
             InitializeComponent();
            
             GAdhe = new gestion_Adherents();
-            GClubs = new gestion_Clubs();           
+            GClubs = new gestion_Clubs();
+            GEvent = new gestion_Evenements();
             
         }
 
@@ -41,9 +43,12 @@ namespace M2LCSHARP
             GC.ShowDialog();
         }
 
-        private void button1_Click(object sender, System.EventArgs e)
+        
+
+        private void btn_event_Click(object sender, System.EventArgs e)
         {
-            MessageBox.Show("ok", "ok");
+            Gestion_Evenements GE = new Gestion_Evenements(GEvent, GClubs);
+            GE.ShowDialog();
         }
     }
 }

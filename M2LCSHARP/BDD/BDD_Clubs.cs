@@ -141,5 +141,26 @@ namespace M2LCSHARP.BDD
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public void modifier_club(club UnClub)
+        {
+            using (connection)
+            {
+                connection.Open();
+                string requete = "UPDATE `club` SET `Titre_club` = @titre, `url_club` = @url, `Adresse_club` = @adresse, `Code_Postal_club` = @cp, `Ville_club` = @ville, `mail_club` = @mail, `telephone_club` = @tel WHERE `club`.`id_club` = @idc";
+                MySqlCommand cmd = new MySqlCommand(requete, connection);
+                cmd.Parameters.AddWithValue("@titre", UnClub.Titre_club);
+                cmd.Parameters.AddWithValue("@url", UnClub.url_club);
+                cmd.Parameters.AddWithValue("@adresse", UnClub.Adresse_club);
+                cmd.Parameters.AddWithValue("@cp", UnClub.Code_Postal);
+                cmd.Parameters.AddWithValue("@ville", UnClub.Ville);
+                cmd.Parameters.AddWithValue("@mail", UnClub.mail_club);
+
+                cmd.Parameters.AddWithValue("@tel", UnClub.telephone_club);
+                cmd.Parameters.AddWithValue("@idc", UnClub.id_club);
+                cmd.ExecuteNonQuery();
+
+            }
+        }
     }
 }

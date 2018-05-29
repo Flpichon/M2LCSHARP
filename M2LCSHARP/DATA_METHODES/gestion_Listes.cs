@@ -25,6 +25,14 @@ namespace M2LCSHARP.DATA_METHODES
             Liste = BD.ReadClub();
             return Liste;
         }
+        public static List<evenement> Créer_Liste_Even()
+        {
+            List<evenement> Liste = new List<evenement>();
+            BDD_evenement BD = new BDD_evenement();
+            Liste = BD.ReadEvent();
+            return Liste;
+        }
+    
             
     }
 }

@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace M2LCSHARPTests.BDD
+
+namespace testsunitaires
 {
-    class BDD_AdhérentsTests
+    class Program
     {
+        static void Main(string[] args)
+        {
+        }
     }
 }

@@ -36,6 +36,7 @@
             this.btn_Club = new System.Windows.Forms.Button();
             this.Adherents = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btn_event = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,8 +58,11 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btn_event);
             this.panel2.Controls.Add(this.btn_Club);
             this.panel2.Controls.Add(this.Adherents);
             this.panel2.Location = new System.Drawing.Point(2, 267);
@@ -90,6 +94,18 @@
             this.Adherents.UseVisualStyleBackColor = false;
             this.Adherents.Click += new System.EventHandler(this.Adherents_Click);
             // 
+            // btn_event
+            // 
+            this.btn_event.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btn_event.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_event.Location = new System.Drawing.Point(221, 5);
+            this.btn_event.Name = "btn_event";
+            this.btn_event.Size = new System.Drawing.Size(101, 37);
+            this.btn_event.TabIndex = 2;
+            this.btn_event.Text = "Evenements";
+            this.btn_event.UseVisualStyleBackColor = false;
+            this.btn_event.Click += new System.EventHandler(this.btn_event_Click);
+            // 
             // Accueil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -97,6 +113,9 @@
             this.ClientSize = new System.Drawing.Size(548, 316);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(564, 355);
+            this.MinimumSize = new System.Drawing.Size(564, 355);
             this.Name = "Accueil";
             this.Text = "Accueil M2L";
             this.panel2.ResumeLayout(false);
@@ -111,6 +130,7 @@
         private System.Windows.Forms.Button Adherents;
         private System.Windows.Forms.Button btn_Club;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button btn_event;
     }
 }
 

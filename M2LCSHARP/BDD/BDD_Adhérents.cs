@@ -42,7 +42,7 @@ namespace M2LCSHARP.BDD
                 using (connection)
                 { 
                     connection.Open();
-                string requete = "select * from adherent left join club on adherent.id_club=club.id_club left join type_club on club.id_club = type_club.id_type_club order by adherent.id_adherent";
+                string requete = "select * from adherent left join club on adherent.id_club=club.id_club left join type_club on club.id_type_club = type_club.id_type_club order by adherent.id_adherent";
 
 
                 MySqlCommand cmd = new MySqlCommand(requete, connection);

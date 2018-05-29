@@ -1,6 +1,6 @@
 ﻿namespace M2LCSHARP.Vues
 {
-    partial class ajout_club
+    partial class Modifier_Club
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.ajout = new System.Windows.Forms.GroupBox();
+            this.lbl_erreur = new System.Windows.Forms.Label();
             this.txt_Tel_Club = new System.Windows.Forms.MaskedTextBox();
             this.lbl_Tel_Club = new System.Windows.Forms.Label();
             this.txt_Mail_Club = new System.Windows.Forms.MaskedTextBox();
             this.fermeraj = new System.Windows.Forms.Button();
-            this.btn_Club_Valid = new System.Windows.Forms.Button();
+            this.btn_Club_Modif = new System.Windows.Forms.Button();
             this.txt_Titre_Club = new System.Windows.Forms.MaskedTextBox();
             this.lbl_Mail_Club = new System.Windows.Forms.Label();
             this.lbl_Titre_club = new System.Windows.Forms.Label();
@@ -45,22 +46,19 @@
             this.txt_Ville_CLub = new System.Windows.Forms.MaskedTextBox();
             this.txt_Cp_Club = new System.Windows.Forms.MaskedTextBox();
             this.lbl_Cp_Club = new System.Windows.Forms.Label();
-            this.cbb_type_club = new System.Windows.Forms.ComboBox();
-            this.lbl_type_club = new System.Windows.Forms.Label();
-            this.lbl_erreur = new System.Windows.Forms.Label();
+            this.btn_Annuler = new System.Windows.Forms.Button();
             this.ajout.SuspendLayout();
             this.SuspendLayout();
             // 
             // ajout
             // 
+            this.ajout.Controls.Add(this.btn_Annuler);
             this.ajout.Controls.Add(this.lbl_erreur);
-            this.ajout.Controls.Add(this.lbl_type_club);
-            this.ajout.Controls.Add(this.cbb_type_club);
             this.ajout.Controls.Add(this.txt_Tel_Club);
             this.ajout.Controls.Add(this.lbl_Tel_Club);
             this.ajout.Controls.Add(this.txt_Mail_Club);
             this.ajout.Controls.Add(this.fermeraj);
-            this.ajout.Controls.Add(this.btn_Club_Valid);
+            this.ajout.Controls.Add(this.btn_Club_Modif);
             this.ajout.Controls.Add(this.txt_Titre_Club);
             this.ajout.Controls.Add(this.lbl_Mail_Club);
             this.ajout.Controls.Add(this.lbl_Titre_club);
@@ -72,12 +70,21 @@
             this.ajout.Controls.Add(this.txt_Ville_CLub);
             this.ajout.Controls.Add(this.txt_Cp_Club);
             this.ajout.Controls.Add(this.lbl_Cp_Club);
-            this.ajout.Location = new System.Drawing.Point(4, 1);
+            this.ajout.Location = new System.Drawing.Point(1, 0);
             this.ajout.Name = "ajout";
             this.ajout.Size = new System.Drawing.Size(540, 314);
-            this.ajout.TabIndex = 18;
+            this.ajout.TabIndex = 19;
             this.ajout.TabStop = false;
-            this.ajout.Text = "ajouter";
+            this.ajout.Text = "modifier";
+            // 
+            // lbl_erreur
+            // 
+            this.lbl_erreur.AutoSize = true;
+            this.lbl_erreur.ForeColor = System.Drawing.Color.Red;
+            this.lbl_erreur.Location = new System.Drawing.Point(364, 155);
+            this.lbl_erreur.Name = "lbl_erreur";
+            this.lbl_erreur.Size = new System.Drawing.Size(0, 13);
+            this.lbl_erreur.TabIndex = 23;
             // 
             // txt_Tel_Club
             // 
@@ -114,17 +121,16 @@
             this.fermeraj.TabIndex = 17;
             this.fermeraj.Text = "Fermer";
             this.fermeraj.UseVisualStyleBackColor = true;
-            this.fermeraj.Click += new System.EventHandler(this.fermeraj_Click);
             // 
-            // btn_Club_Valid
+            // btn_Club_Modif
             // 
-            this.btn_Club_Valid.Location = new System.Drawing.Point(388, 244);
-            this.btn_Club_Valid.Name = "btn_Club_Valid";
-            this.btn_Club_Valid.Size = new System.Drawing.Size(75, 23);
-            this.btn_Club_Valid.TabIndex = 16;
-            this.btn_Club_Valid.Text = "Ajouter";
-            this.btn_Club_Valid.UseVisualStyleBackColor = true;
-            this.btn_Club_Valid.Click += new System.EventHandler(this.btn_Club_Valid_Click);
+            this.btn_Club_Modif.Location = new System.Drawing.Point(390, 240);
+            this.btn_Club_Modif.Name = "btn_Club_Modif";
+            this.btn_Club_Modif.Size = new System.Drawing.Size(75, 23);
+            this.btn_Club_Modif.TabIndex = 16;
+            this.btn_Club_Modif.Text = "Modifier";
+            this.btn_Club_Modif.UseVisualStyleBackColor = true;
+            this.btn_Club_Modif.Click += new System.EventHandler(this.btn_Club_Modif_Click);
             // 
             // txt_Titre_Club
             // 
@@ -227,41 +233,25 @@
             this.lbl_Cp_Club.TabIndex = 7;
             this.lbl_Cp_Club.Text = "Code Postal";
             // 
-            // cbb_type_club
+            // btn_Annuler
             // 
-            this.cbb_type_club.FormattingEnabled = true;
-            this.cbb_type_club.Location = new System.Drawing.Point(364, 96);
-            this.cbb_type_club.Name = "cbb_type_club";
-            this.cbb_type_club.Size = new System.Drawing.Size(121, 21);
-            this.cbb_type_club.TabIndex = 21;
+            this.btn_Annuler.Location = new System.Drawing.Point(390, 210);
+            this.btn_Annuler.Name = "btn_Annuler";
+            this.btn_Annuler.Size = new System.Drawing.Size(75, 23);
+            this.btn_Annuler.TabIndex = 24;
+            this.btn_Annuler.Text = "Annuler";
+            this.btn_Annuler.UseVisualStyleBackColor = true;
+            this.btn_Annuler.Click += new System.EventHandler(this.btn_Annuler_Click);
             // 
-            // lbl_type_club
-            // 
-            this.lbl_type_club.AutoSize = true;
-            this.lbl_type_club.Location = new System.Drawing.Point(385, 65);
-            this.lbl_type_club.Name = "lbl_type_club";
-            this.lbl_type_club.Size = new System.Drawing.Size(69, 13);
-            this.lbl_type_club.TabIndex = 22;
-            this.lbl_type_club.Text = "Type du club";
-            // 
-            // lbl_erreur
-            // 
-            this.lbl_erreur.AutoSize = true;
-            this.lbl_erreur.ForeColor = System.Drawing.Color.Red;
-            this.lbl_erreur.Location = new System.Drawing.Point(364, 155);
-            this.lbl_erreur.Name = "lbl_erreur";
-            this.lbl_erreur.Size = new System.Drawing.Size(0, 13);
-            this.lbl_erreur.TabIndex = 23;
-            // 
-            // ajout_club
+            // Modifier_Club
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 316);
+            this.ClientSize = new System.Drawing.Size(524, 275);
             this.Controls.Add(this.ajout);
-            this.Name = "ajout_club";
-            this.Text = "ajout_club";
-            this.Load += new System.EventHandler(this.ajout_club_Load);
+            this.Name = "Modifier_Club";
+            this.Text = "Modifier_Club";
+            this.Load += new System.EventHandler(this.Modifier_Club_Load);
             this.ajout.ResumeLayout(false);
             this.ajout.PerformLayout();
             this.ResumeLayout(false);
@@ -271,8 +261,12 @@
         #endregion
 
         private System.Windows.Forms.GroupBox ajout;
+        private System.Windows.Forms.Label lbl_erreur;
+        private System.Windows.Forms.MaskedTextBox txt_Tel_Club;
+        private System.Windows.Forms.Label lbl_Tel_Club;
+        private System.Windows.Forms.MaskedTextBox txt_Mail_Club;
         private System.Windows.Forms.Button fermeraj;
-        private System.Windows.Forms.Button btn_Club_Valid;
+        private System.Windows.Forms.Button btn_Club_Modif;
         private System.Windows.Forms.MaskedTextBox txt_Titre_Club;
         private System.Windows.Forms.Label lbl_Mail_Club;
         private System.Windows.Forms.Label lbl_Titre_club;
@@ -284,11 +278,6 @@
         private System.Windows.Forms.MaskedTextBox txt_Ville_CLub;
         private System.Windows.Forms.MaskedTextBox txt_Cp_Club;
         private System.Windows.Forms.Label lbl_Cp_Club;
-        private System.Windows.Forms.MaskedTextBox txt_Tel_Club;
-        private System.Windows.Forms.Label lbl_Tel_Club;
-        private System.Windows.Forms.MaskedTextBox txt_Mail_Club;
-        private System.Windows.Forms.Label lbl_type_club;
-        private System.Windows.Forms.ComboBox cbb_type_club;
-        private System.Windows.Forms.Label lbl_erreur;
+        private System.Windows.Forms.Button btn_Annuler;
     }
 }

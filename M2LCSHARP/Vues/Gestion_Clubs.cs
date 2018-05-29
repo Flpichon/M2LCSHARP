@@ -26,7 +26,7 @@ namespace M2LCSHARP.Vues
         {
             InitializeComponent();
             GesClub = Ges;
-            gesadh = new gestion_Adherents();
+            gesadh = gAdhe;
             bADHC = new BDD_Clubs();
         }
 
@@ -52,6 +52,31 @@ namespace M2LCSHARP.Vues
         {
             ajout_club ajtclub = new ajout_club(GesClub);
             ajtclub.ShowDialog();
+        }
+
+        private void btncloseclub_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnrefresh_Click(object sender, EventArgs e)
+        {
+            Dt_Club.Rows.Clear();
+            GesClub.liste = bADHC.ReadClub();
+            Dt_Club.AutoGenerateColumns = true;
+            Dt_Club.AutoResizeColumns();
+            foreach (club club in GesClub.liste)
+            {
+                int nbr = bADHC.Nombredadh(club);
+                Dt_Club.Rows.Add(club.id_club, club.Titre_club, club.url_club, club.Code_Postal, club.Ville, club.Adresse_club, club.mail_club, club.telephone_club, club.type.libelle, nbr);
+
+            }
+        }
+
+        private void Dt_Club_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Modifier_Club Mod = new Modifier_Club(GesClub.indexclub(Dt_Club.CurrentRow.Index));
+            Mod.ShowDialog();
         }
     }
 }
