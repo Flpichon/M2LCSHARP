@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>M2LCSHARP</name>
+    </assembly>
+    <members>
+        <member name="M:M2LCSHARP.BDD.BDD_Clubs.Nombreevenement(M2LCSHARP.DATA.club)">
+            <summary>
+            Cette fonction permet de retourner le nombre d'événements d'un club entré en paramètre
+            </summary>
+            <param name="club"></param>
+            <returns>nombre d'événement du club</returns>
+        </member>
+        <member name="M:M2LCSHARP.BDD.BDD_evenement.ReadEvent">
+            <summary>
+            Cette fonction permet de récuperer une liste d'évenement dans la BDD en l'associant à des instances de la classe : evenement
+            </summary>
+            <returns>Liste d'événements</returns>
+        </member>
+        <member name="M:M2LCSHARP.BDD.BDD_evenement.Ajouter_Evenement(M2LCSHARP.DATA.evenement)">
+            <summary>
+            Cette fonction permet d'ajouter un evenement passé en paramètre dans la base de données
+            </summary>
+            <param evenement="evenement"></param>
+        </member>
+        <member name="M:M2LCSHARP.BDD.BDD_evenement.Modifier_Evenement(M2LCSHARP.DATA.evenement)">
+            <summary>
+            Cette fonction permet de modifier un evenement entré en paramètre
+            en récupérant son id
+            </summary>
+            <param name="evenement"></param>
+        </member>
+        <member name="M:M2LCSHARP.DATA_METHODES.gestion_Clubs.Nombredeclubs">
+            <summary>
+            cette fonction permet de récuper le nombre total de club présent dans la liste
+            </summary>
+            <returns>nombre de clubs</returns>
+        </member>
+        <member name="F:M2LCSHARP.Accueil.components">
+            <summary>
+            Variable nécessaire au concepteur.
+            </summary>
+        </member>
+        <member name="M:M2LCSHARP.Accueil.Dispose(System.Boolean)">
+            <summary>
+            Nettoyage des ressources utilisées.
+            </summary>
+            <param name="disposing">true si les ressources managées doivent être supprimées ; sinon, false.</param>
+        </member>
+        <member name="M:M2LCSHARP.Accueil.InitializeComponent">
+            <summary>
+            Méthode requise pour la prise en charge du concepteur - ne modifiez pas
+            le contenu de cette méthode avec l'éditeur de code.
+            </summary>
+        </member>
+        <member name="M:M2LCSHARP.DATA.club.AjouterClubAdh(M2LCSHARP.DATA.adherent)">
+            <summary>
+            Cette fonction permet d'ajouter un adhérent à la liste d'adhérents si les critères correspondent.
+            </summary>
+            <param adherent="Adh"></param>
+        </member>
+        <member name="M:M2LCSHARP.Program.Main">
+            <summary>
+            Point d'entrée principal de l'application.
+            </summary>
+        </member>
+        <member name="F:M2LCSHARP.Vues.ajout_adh.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:M2LCSHARP.Vues.ajout_adh.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:M2LCSHARP.Vues.ajout_adh.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:M2LCSHARP.Vues.ajout_club.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:M2LCSHARP.Vues.ajout_club.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:M2LCSHARP.Vues.ajout_club.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:M2LCSHARP.Vues.ajout_event.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:M2LCSHARP.Vues.ajout_event.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:M2LCSHARP.Vues.ajout_event.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:M2LCSHARP.Vues.Gestion_Adherents.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:M2LCSHARP.Vues.Gestion_Adherents.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:M2LCSHARP.Vues.Gestion_Adherents.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:M2LCSHARP.Vues.Gestion_Clubs.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:M2LCSHARP.Vues.Gestion_Clubs.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:M2LCSHARP.Vues.Gestion_Clubs.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:M2LCSHARP.Vues.Gestion_Evenements.Dt_Event_RowHeaderMouseDoubleClick(System.Object,System.Windows.Forms.DataGridViewCellMouseEventArgs)">
+            <summary>
+            Permet en double cliquant dans le header de la ligne d'accéder à la modification de l'événement
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:M2LCSHARP.Vues.Gestion_Evenements.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:M2LCSHARP.Vues.Gestion_Evenements.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:M2LCSHARP.Vues.Gestion_Evenements.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:M2LCSHARP.Vues.Modifer_Adh.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:M2LCSHARP.Vues.Modifer_Adh.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:M2LCSHARP.Vues.Modifer_Adh.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:M2LCSHARP.Vues.Modifier_Club.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:M2LCSHARP.Vues.Modifier_Club.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:M2LCSHARP.Vues.Modifier_Club.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:M2LCSHARP.Vues.Modifier_event.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:M2LCSHARP.Vues.Modifier_event.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:M2LCSHARP.Vues.Modifier_event.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:M2LCSHARP.Properties.Resources">
+            <summary>
+              Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+            </summary>
+        </member>
+        <member name="P:M2LCSHARP.Properties.Resources.ResourceManager">
+            <summary>
+              Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+            </summary>
+        </member>
+        <member name="P:M2LCSHARP.Properties.Resources.Culture">
+            <summary>
+              Remplace la propriété CurrentUICulture du thread actuel pour toutes
+              les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+            </summary>
+        </member>
+    </members>
+</doc>
